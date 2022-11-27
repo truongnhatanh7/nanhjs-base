@@ -12,7 +12,15 @@ const story = storiesOf("Component/Button", module);
 // };
 
 // const ButtonDefault = () => <Button>Click me</Button>
-story.add("Small", () => <Button>Click me</Button>)
+story.add("Small", () => (
+  <Button
+    onClick={() => {
+      console.log("Button clicked")
+    }}
+  >
+    Click me
+  </Button>
+))
 
 story.add("Medium", () => <Button size="medium">Click me</Button>)
 
