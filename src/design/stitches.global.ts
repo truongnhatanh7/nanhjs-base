@@ -41,7 +41,7 @@ export const reset = {
     fontFamily: "'Montserrat', sans-serif",
     fontSize: "14px",
     color: "white",
-    fontWeight: 600,
+    fontWeight: "$normal",
   },
 
   [`p, h1, h2, h3, h4, h5, h6`]: {

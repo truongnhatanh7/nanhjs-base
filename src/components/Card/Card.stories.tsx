@@ -3,7 +3,6 @@ import { styled, globalStyle } from "../../design/stitches.config"
 import { Card } from "./Card"
 import { storiesOf } from "@storybook/react"
 
-// globalStyle()
 const story = storiesOf("Component/Card", module);
 
 const GridWrapper = styled("div", {

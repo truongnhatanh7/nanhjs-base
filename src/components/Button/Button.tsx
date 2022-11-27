@@ -3,13 +3,6 @@ import { styled } from "../../design/stitches.config"
 
 type PrimitiveProps = React.ComponentProps<typeof Wrapper>;
 
-// type Props = {
-//   ...PrimitiveProps,
-//   size?: "small" | "medium" | "large",
-//   shape?: "circle" | "rect",
-//   type?: "disabled" | "primary" | "danger" | "warning",
-// }
-
 export const Button: React.FC<PrimitiveProps> = React.forwardRef<HTMLButtonElement, PrimitiveProps>((props, ref) => {
   return (<Wrapper ref={ref} {...props}>
     {
