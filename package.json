@@ -1,0 +1,45 @@
+{
+  "name": "nanhjs-base-ui",
+  "version": "1.0.0-beta",
+  "description": "nanhjs-ui base ui lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist",
+    "deploy": "npm run build && npm publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truongnhatanh7/nanhjs-base.git"
+  },
+  "author": "nanh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truongnhatanh7/nanhjs-base/issues"
+  },
+  "homepage": "https://github.com/truongnhatanh7/nanhjs-base#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.25",
+    "babel-loader": "^8.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "clsx": "^1.2.1",
+    "storybook-css-modules": "^1.0.8"
+  }
+}
