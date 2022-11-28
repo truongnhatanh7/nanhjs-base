@@ -34,6 +34,7 @@ story.add("Default", () => (
     </Collapse>
     <div
       style={{
+        marginTop: "16px",
         color: "white",
         fontSize: "14px",
       }}
