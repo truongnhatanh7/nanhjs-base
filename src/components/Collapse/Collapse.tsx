@@ -16,8 +16,8 @@ export const Collapse: React.FC<CollapseProps> = React.forwardRef<HTMLDivElement
     setOpen(!open);
   }
 
-  return (<Wrapper ref={ref} onClick={handleToggle} >
-    <Heading>
+  return (<Wrapper ref={ref} >
+    <Heading onClick={handleToggle}>
       <Title>{props.title}</Title>
       <StyledChevronDown toggle={open ? "isToggled" : "isClosed"}>
         <ChevronDown />
@@ -62,13 +62,13 @@ const Heading = styled("button", {
   padding: "$x2 $x3",
   width: "100%",
   border: "1px solid $white",
+  outline: "none",
   "&:hover": {
     cursor: "pointer",
   },
   "&:focus-visible": {
     outline: "2px solid $white"
   }
-  // borderRadius: "$borderRadius$br",
 })
 
 const Title = styled("h1", {
@@ -95,6 +95,7 @@ const Content = styled("div", {
 
 const CellList = styled("ul", {
   minHeight: 0,
+  
 })
 
 const Cell = styled("li", {
@@ -102,6 +103,7 @@ const Cell = styled("li", {
   borderTop: 'none',
   background: "$black",
   color: "$white",
+  outline: "none",
   "&:focus-visible": {
     outline: "2px solid $white",
   }
