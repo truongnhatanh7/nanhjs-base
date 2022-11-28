@@ -1,4 +1,4 @@
-# NANHJS BASE
+# NANHJS BASE UI
 
 A collection of React Components, inspired by Vercel design system.
 Made with React + Stitches CSS
@@ -6,12 +6,12 @@ Made with React + Stitches CSS
 ## Installation
 
 ```bash
-npm i nanhjs-base
+npm i nanhjs-base-ui
 ```
 or
 
 ```bash
-yarn add nanhjs-base
+yarn add nanhjs-base-ui
 ```
 ## Live demo
 [to be updated]
