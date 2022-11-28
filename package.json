@@ -38,8 +38,6 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8",
-    "clsx": "^1.2.1",
-    "storybook-css-modules": "^1.0.8"
+    "@stitches/react": "^1.2.8"
   }
 }
