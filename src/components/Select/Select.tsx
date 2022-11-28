@@ -1,6 +1,5 @@
 import React from "react"
 import { styled } from "../../design/stitches.config"
-import SelectIcon from "./SelectIcon"
 
 type PrimitiveProps = React.ComponentProps<typeof Wrapper>;
 
@@ -69,10 +68,6 @@ const Wrapper = styled("label", {
   "&:has(> select:focus-visible)": {
     outline: "2px solid $white"
   }
-})
-
-const StyledSelectIcon = styled(SelectIcon, {
-  display: "inline-block"
 })
 
 const NativeSelect = styled("select", {
