@@ -1,6 +1,6 @@
 {
   "name": "nanhjs-base-ui",
-  "version": "1.0.0-beta",
+  "version": "1.0.2-beta",
   "description": "nanhjs-ui base ui lib",
   "main": "index.js",
   "scripts": {

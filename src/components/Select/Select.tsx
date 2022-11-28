@@ -1,6 +1,6 @@
 import React from "react"
 import { styled } from "../../design/stitches.config"
-import * as SelectIcon from "./selectIcon.svg"
+import SelectIcon from "./SelectIcon"
 
 type PrimitiveProps = React.ComponentProps<typeof Wrapper>;
 
@@ -33,8 +33,9 @@ export const Select: React.FC<SelectProps> = React.forwardRef<HTMLLabelElement, 
         }}
       >
         {
-          items[selectedItem] + '\u2195'
+          items[selectedItem] + "  \u2193"
         }
+
         <NativeSelect
           ref={selectRef}
           onChange={() => {
@@ -68,6 +69,10 @@ const Wrapper = styled("label", {
   "&:has(> select:focus)": {
     outline: "4px solid $success"
   }
+})
+
+const StyledSelectIcon = styled(SelectIcon, {
+  display: "inline-block"
 })
 
 const NativeSelect = styled("select", {
