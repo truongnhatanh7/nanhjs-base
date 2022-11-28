@@ -105,7 +105,7 @@ const Cell = styled("li", {
   color: "$white",
   outline: "none",
   "&:focus-visible": {
-    outline: "2px solid $white",
+    // outline: "2px solid $white",
   }
 
 })
