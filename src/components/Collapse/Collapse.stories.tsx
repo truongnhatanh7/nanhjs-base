@@ -28,7 +28,13 @@ story.add("Default", () => (
         <p>LOREM IPSUM</p>
         <p>LOREM IPSUM</p>
         <p>LOREM IPSUM</p>
-        <p>LOREM IPSUM</p>    
+        <p>LOREM IPSUM</p>
+        <input type="date" style={{
+          color: "black",
+          background: "white",
+          borderRadius: 0,
+          padding: "8px 16px"
+        }}/>    
       </div>
       <h1>lorem ipsum</h1>
     </Collapse>

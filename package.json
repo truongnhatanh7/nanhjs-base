@@ -1,12 +1,13 @@
 {
   "name": "nanhjs-base-ui",
-  "version": "1.0.3-beta",
+  "version": "1.0.13-beta",
   "description": "nanhjs-ui base ui lib",
-  "main": "index.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist",
+    "build": "npm run clean && tsc --outDir ./dist/esm && tsc --module CommonJS --outDir ./dist/cjs && cp package.json README.md ./dist",
     "deploy": "npm run build && npm publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
