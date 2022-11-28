@@ -66,8 +66,8 @@ const Wrapper = styled("label", {
   borderRadius: "$borderRadius$br",
   color: "$white",
   outline: "none",
-  "&:has(> select:focus)": {
-    outline: "4px solid $success"
+  "&:has(> select:focus-visible)": {
+    outline: "2px solid $white"
   }
 })
 
@@ -83,8 +83,8 @@ const NativeSelect = styled("select", {
   bottom: 0,
   opacity: 0,
   borderRadius: "$borderRadius$br",
-  "&:focus label:focus": {
-    outline: "4px solid $success"
+  "&:focus-visible label:focus-visible": {
+    outline: "2px solid $white"
   }
 })
 

@@ -67,8 +67,11 @@ const Wrapper = styled("button", {
   [`&:hover ${Image}`]: {
     transform: "scale(1.02)"
   },
-  "&:focus": {
-    outline: "4px solid $success"
+  "&:focus-visible": {
+    outline: "2px solid $white"
+  },
+  "&:active": {
+    opacity: 0.8
   }
 })
 

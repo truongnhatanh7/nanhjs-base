@@ -18,8 +18,14 @@ const Wrapper = styled("button", {
   borderRadius: "$borderRadius$br",
   color: "$black",
   transition: "0.1s",
+  outline: "none",
   "&:hover": {
     cursor: "pointer",
+  },
+  "&:focus-visible": {
+    outline: "2px solid $success",
+  },
+  "&:active": {
     opacity: 0.7
   },
   variants: {
@@ -29,19 +35,31 @@ const Wrapper = styled("button", {
         "&:hover": {
           cursor: "not-allowed",
           opacity: 1,
-        }
+        },
+        "&:focus-visible": {
+          outline: "none",
+        },
       },
       primary: {
         background: "$success",
-        color: "$white"
+        color: "$white",
+        "&:focus-visible": {
+          outline: "2px solid $white",
+        },
       },
       danger: {
         background: "$danger",
-        color: "$white"
+        color: "$white",
+        "&:focus-visible": {
+          outline: "2px solid $white",
+        },
       },
       warning: {
         background: "$warning",
-        color: "$white"
+        color: "$white",
+        "&:focus-visible": {
+          outline: "2px solid $white",
+        },
       }
     },
     size: {
