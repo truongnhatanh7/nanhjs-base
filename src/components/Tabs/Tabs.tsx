@@ -1,15 +1,55 @@
-import React from "react"
+import React from 'react';
+import { TabHeader } from "./TabHeader"
 import { styled } from "../../design/stitches.config"
+// import { Tab } from "./Tab"
 
-type PrimitiveProps = React.ComponentProps<typeof Wrapper>;
+type Props = {
+  children: JSX.Element[]
+}
 
-export const Tabs: React.FC<PrimitiveProps> = React.forwardRef<HTMLDivElement, PrimitiveProps>((props, ref) => {
-  return (<Wrapper>
+export const Tabs: React.FC<Props> = ({ children }) => {
+  const [selectedTab, setSelectedTab] = React.useState(0)
+  console.log(selectedTab)
 
-  </Wrapper>)
-})
+  return (
+    <Wrapper>
+      <TabsList>
+        {
+          children.map((item, index) => (
+            <StyledTabHeader
+              key={index}
+              title={item.props.title}
+              index={index}
+              setSelectedTab={setSelectedTab}
+              currentTab={selectedTab}
+            />
+          ))
+        }
+      </TabsList>
+      <TabsPanel>
+        {children[selectedTab]}
+      </TabsPanel>
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled("div", {
 
 })
 
+const StyledTabHeader = styled(TabHeader, {
+
+})
+
+const TabsList = styled("ul", {
+  display: "flex",
+  gap: '$x1',
+})
+
+const TabsPanel = styled("div", {
+  marginTop: "$x1",
+  border: "1px solid $white",
+  color: "white",
+  borderRadius: "$borderRadius$br",
+  padding: "$x2",
+})
