@@ -29,7 +29,7 @@ const Wrapper = styled("button", {
     opacity: 0.7
   },
   variants: {
-    type: {
+    mode: {
       disabled: {
         background: "$accent4",
         "&:hover": {

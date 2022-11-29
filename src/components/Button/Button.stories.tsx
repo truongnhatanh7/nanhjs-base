@@ -6,12 +6,6 @@ import { storiesOf } from "@storybook/react"
 globalStyle()
 const story = storiesOf("Component/Button", module);
 
-// export default {
-//   title: "ButtonComponent",
-//   component: Button,
-// };
-
-// const ButtonDefault = () => <Button>Click me</Button>
 story.add("Small", () => (
   <Button
     onClick={() => {
@@ -30,13 +24,13 @@ story.add("Rect", () => <Button shape="rect">Click me</Button>)
 
 story.add("Circle", () => <Button shape="pill">Click me</Button>)
 
-story.add("Disabled", () => <Button type="disabled">Click me</Button>)
+story.add("Disabled", () => <Button mode="disabled">Click me</Button>)
 
-story.add("Primary", () => <Button type="primary">Click me</Button>)
+story.add("Primary", () => <Button mode="primary">Click me</Button>)
 
-story.add("Danger", () => <Button type="danger">Click me</Button>)
+story.add("Danger", () => <Button mode="danger">Click me</Button>)
 
-story.add("Warning", () => <Button type="warning">Click me</Button>)
+story.add("Warning", () => <Button mode="warning">Click me</Button>)
 
 
 
