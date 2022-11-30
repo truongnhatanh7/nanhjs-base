@@ -5,16 +5,16 @@ export default {
     black: "black",
 
     // primary
-    background: "#000",
-    accent1: "#111",
-    accent2: "#333",
-    accent3: "#444",
-    accent4: "#666",
-    accent5: "#888",
-    accent6: "#999",
+    background: "#000000",
+    accent1: "#111111",
+    accent2: "#333333",
+    accent3: "#444444",
+    accent4: "#666666",
+    accent5: "#888888",
+    accent6: "#999999",
     accent7: "#EAEAEA",
     accent8: "#FAFAFA",
-    foreground: "#FFF",
+    foreground: "#FFFFFF",
 
     // danger
     dangerLighter: "#F7D4D6",

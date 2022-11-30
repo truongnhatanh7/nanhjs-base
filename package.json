@@ -1,6 +1,6 @@
 {
   "name": "nanhjs-base-ui",
-  "version": "1.0.14-beta",
+  "version": "1.0.15-beta",
   "description": "nanhjs-ui base ui lib",
   "main": "cjs/index.js",
   "module": "esm/index.js",
