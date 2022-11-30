@@ -14,4 +14,4 @@ or
 yarn add nanhjs-base-ui
 ```
 ## Live demo
-[to be updated]
+[Storybook](https://6386f99eb5b46043a586054a-hostakybts.chromatic.com/)
