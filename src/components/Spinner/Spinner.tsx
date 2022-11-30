@@ -1,10 +1,10 @@
 import React from "react";
 import { styled, keyframes } from "../../design/stitches.config";
-import { SpinnerProps, BarProps } from "./SpinnerTypes.ts";
-import { spinner } from "./SpinnerKeyframes.ts";
+import { SpinnerProps, BarProps } from "./SpinnerTypes";
+import { spinner } from "./SpinnerKeyframes";
 type PrimitiveProps = React.ComponentProps<typeof Wrapper>;
 
-const Bar: React.FC<BarProps> = ({ size }) => {
+const Bar: React.FC<BarProps> = ({ size = 20 }) => {
 	return (
 		<SpinnerBar
 			css={{
@@ -18,7 +18,7 @@ const Bar: React.FC<BarProps> = ({ size }) => {
 	);
 };
 
-export const Spinner: React.FC<SpinnerProps> = ({ size }) => {
+export const Spinner: React.FC<SpinnerProps> = ({ size = 20 }) => {
 	const barSize = size / 2;
 	return (
 		<Wrapper
@@ -28,7 +28,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ size }) => {
 			}}
 		>
 			{Array(12)
-				.fill()
+				.fill(0)
 				.map((_, index) => (
 					<Bar size={barSize} key={index}></Bar>
 				))}
