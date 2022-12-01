@@ -1,6 +1,6 @@
 {
   "name": "nanhjs-base-ui",
-  "version": "1.0.17-beta",
+  "version": "1.0.18-beta",
   "description": "nanhjs-ui base ui lib",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -46,9 +46,7 @@
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.1",
     "@stitches/react": "^1.2.8",
-    "react-aria": "^3.21.0",
-    "react-merge-refs": "^2.0.1",
-    "react-stately": "^3.19.0"
+    "react-merge-refs": "^2.0.1"
   },
   "readme": "ERROR: No README data found!",
   "_id": "nanhjs-base-ui@1.0.15-beta"
