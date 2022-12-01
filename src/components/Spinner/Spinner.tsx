@@ -54,7 +54,7 @@ const Wrapper = styled("div", {
 			left: "50%",
 			width: "5%",
 			borderRadius: "20%",
-			background: "#fff",
+			background: "$accent5",
 		},
 
 		"&:nth-child(1)": {

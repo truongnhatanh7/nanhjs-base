@@ -25,7 +25,7 @@ const Wrapper = styled("div", {
 	display: "inline-block",
 	position: "relative",
 	overflow: "hidden",
-	backgroundColor: "#DDDBDD",
+	backgroundColor: "$accent6",
 
 	"&::after": {
 		content: "",
