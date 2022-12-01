@@ -13,6 +13,9 @@ const Wrapper = styled("input", {
   borderRadius: "$borderRadius$br",
   background: "$black",
   color: "$white",
+  "&:focus": {
+    outline: "none",
+  },
   "&:focus-visible": {
     outline: "2px solid $white",
   }
