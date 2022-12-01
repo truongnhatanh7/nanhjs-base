@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { TabHeader } from "./TabHeader"
 import { styled } from "../../design/stitches.config"
-// import { Tab } from "./Tab"
+import { Tab, TabProps } from "./Tab"
+
 
 type Props = {
-  children: JSX.Element[]
+  children: ReactElement[]
 }
 
 export const Tabs: React.FC<Props> = ({ children }) => {
