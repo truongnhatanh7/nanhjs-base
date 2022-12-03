@@ -1,7 +1,6 @@
 import React from "react"
 import { styled } from "../../design/stitches.config"
 import { CheckMark } from "./CheckMark";
-import * as PrimitiveCheckbox from '@radix-ui/react-checkbox'
 import { mergeRefs } from "react-merge-refs";
 
 type PrimitiveCheckbox = React.ComponentProps<typeof Input>
@@ -13,7 +12,6 @@ export const Checkbox: React.FC<PrimitiveCheckbox> = React.forwardRef<HTMLInputE
   return (<Label onClick={() => {
     setChecked(!checked)
   }}
-    tabIndex={1}
     onKeyDown={(e) => {
       if (e.code === 'Space') {
         if (innerRef.current) {
@@ -22,9 +20,10 @@ export const Checkbox: React.FC<PrimitiveCheckbox> = React.forwardRef<HTMLInputE
         }
       }
     }}
+    tabIndex={1}
   >
     {checked && <CheckMark />}
-    <Input {...props} ref={mergeRefs([innerRef, ref])} type="checkbox" id="c1" />
+    <Input {...props} ref={mergeRefs([innerRef, ref])} type="checkbox" />
   </Label>)
 })
 
@@ -41,6 +40,7 @@ const Label = styled("label", {
 })
 
 const Input = styled("input", {
+  display: "none",
   opacity: 0,
   position: "absolute",
   inset: 0,
