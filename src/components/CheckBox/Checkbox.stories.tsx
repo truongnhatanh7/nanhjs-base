@@ -1,18 +1,19 @@
-import React from 'react';
-import { storiesOf } from "@storybook/react"
-import { styled } from "../../design/stitches.config"
-import { Checkbox } from "./CheckBox"
-import { useForm, Controller } from "react-hook-form"
-import { Button } from "../Button/Button"
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { styled } from "../../design/stitches.config";
+import { Checkbox } from "./CheckBox";
+import { useForm, Controller } from "react-hook-form";
+import { Button } from "../Button/Button";
 
 type FormValues = {
-  c1: boolean
-  c2: boolean
-}
+	c1: boolean;
+	c2: boolean;
+};
 
 const story = storiesOf("Component/Checkbox", module);
 
 story.add("Default", () => (
+
   <Form>
     <Checkbox />
   </Form>
@@ -38,15 +39,10 @@ story.add("React hook form", () => {
   </Form>)
 })
 
+
 const Form = styled("form", {
-  padding: "$x2",
-  color: "$white",
-  display: "flex",
-  flexDirection: "column",
-})
-
-
-
-
-
-
+	padding: "$x2",
+	color: "$white",
+	display: "flex",
+	flexDirection: "column",
+});
