@@ -13,40 +13,32 @@ type FormValues = {
 const story = storiesOf("Component/Checkbox", module);
 
 story.add("Default", () => (
-	<Form>
-		<Checkbox />
-	</Form>
-));
+
+  <Form>
+    <Checkbox />
+  </Form>
+))
 
 story.add("React hook form", () => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors, isSubmitSuccessful },
-	} = useForm<FormValues>();
-	const onSubmit = handleSubmit((data) => {
-		console.log("On submit");
-		console.log(data);
-	});
+  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<FormValues>();
+  const onSubmit = handleSubmit((data) => {
+    console.log("On submit")
+    console.log(data);
+  });
 
-	return (
-		<Form onSubmit={onSubmit}>
-			C1
-			<Checkbox {...register("c1")} />
-			C2
-			<Checkbox {...register("c2")} />
-			<Button
-				type="submit"
-				css={{
-					marginTop: 8,
-				}}
-			>
-				Submit
-			</Button>
-		</Form>
-	);
-});
+  return (<Form onSubmit={onSubmit}>
+    C1
+    <Checkbox {...register("c1")} />
+    C2
+    <Checkbox {...register("c2")} />
+    <Button type="submit" css={{
+      marginTop: 8
+    }}>
+      Submit
+    </Button>
+  </Form>)
+})
+
 
 const Form = styled("form", {
 	padding: "$x2",
