@@ -23,7 +23,7 @@ export const Checkbox: React.FC<PrimitiveCheckbox> = React.forwardRef<HTMLInputE
     tabIndex={1}
   >
     {checked && <CheckMark />}
-    <Input {...props} ref={mergeRefs([innerRef, ref])} type="checkbox" />
+    <Input {...props} ref={mergeRefs([innerRef, ref])} type="checkbox" tabIndex={-1} />
   </Label>)
 })
 
@@ -40,7 +40,6 @@ const Label = styled("label", {
 })
 
 const Input = styled("input", {
-  display: "none",
   opacity: 0,
   position: "absolute",
   inset: 0,

@@ -13,7 +13,9 @@ type FormValues = {
 const story = storiesOf("Component/Checkbox", module);
 
 story.add("Default", () => (
-  <Checkbox />
+  <Form>
+    <Checkbox />
+  </Form>
 ))
 
 story.add("React hook form", () => {
@@ -23,7 +25,7 @@ story.add("React hook form", () => {
     console.log(data);
   });
 
-  return (<Form onSubmit={onSubmit}>   
+  return (<Form onSubmit={onSubmit}>
     C1
     <Checkbox {...register("c1")} />
     C2
@@ -33,7 +35,7 @@ story.add("React hook form", () => {
     }}>
       Submit
     </Button>
-  </Form>) 
+  </Form>)
 })
 
 const Form = styled("form", {
