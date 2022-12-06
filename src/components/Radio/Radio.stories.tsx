@@ -6,13 +6,16 @@ import { useForm, Controller } from "react-hook-form";
 import { Button } from "../Button/Button";
 
 type FormValues = {
-	c1: boolean;
-	c2: boolean;
+	role: string;
 };
 
 const story = storiesOf("Component/Radio", module);
 
-story.add("Default", () => <Radio />);
+story.add("Default", () => (
+	<Form>
+		<Radio />
+	</Form>
+));
 
 story.add("React hook form", () => {
 	const {
@@ -26,12 +29,14 @@ story.add("React hook form", () => {
 		console.log(data);
 	});
 
+
+
 	return (
 		<Form onSubmit={onSubmit}>
-			R1
-			<Radio htmlFor="a" id="a" {...register("c1")} />
-			R2
-			<Radio htmlFor="a" id="a" {...register("c2")} />
+			Frontend
+			<Radio group="fe" {...register("role")} />
+			Backend
+			<Radio group="be" {...register("role")} />
 			<Button
 				type="submit"
 				css={{

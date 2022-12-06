@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../design/stitches.config";
-import { CheckMark } from "./CheckMark";
+
 import { mergeRefs } from "react-merge-refs";
 
 type PrimitiveRadio = React.ComponentProps<typeof Input>;
@@ -11,10 +11,12 @@ export const Radio: React.FC<PrimitiveRadio> = React.forwardRef<
 >((props, ref) => {
 	const innerRef = React.useRef<HTMLInputElement>(null);
 	const [checked, setChecked] = React.useState(false);
+
 	return (
 		<Label
-			onClick={() => {
+			onClick={(e) => {
 				setChecked(!checked);
+				console.log(e.target.value);
 			}}
 			onKeyDown={(e) => {
 				if (e.code === "Space") {
@@ -24,17 +26,19 @@ export const Radio: React.FC<PrimitiveRadio> = React.forwardRef<
 					}
 				}
 			}}
-			htmlFor={props.htmlFor}
 			tabIndex={1}
+			htmlFor={props.group}
 		>
-			{checked && "checked"}
 			<Input
 				{...props}
 				ref={mergeRefs([innerRef, ref])}
 				type="radio"
+				tabIndex={-1}
+				id={props.group}
 				name={props.name}
-				id={props.id}
+				value={props.group}
 			/>
+			<Check />
 		</Label>
 	);
 });
@@ -51,9 +55,26 @@ const Label = styled("label", {
 	},
 });
 
-const Input = styled("input", {
+const Check = styled("div", {
+	position: "absolute",
+	top: "50%",
+	left: "50%",
+	transform: "translate(-50%, -50%)",
+	background: "#ffffff",
+	borderRadius: "9999px",
+	zIndex: 2,
 	display: "none",
+	width: 12,
+	height: 12,
+});
+
+const Input = styled("input", {
 	opacity: 0,
 	position: "absolute",
 	inset: 0,
+	zIndex: 3,
+
+	[`&:checked + ${Check}`]: {
+		display: "block",
+	},
 });
