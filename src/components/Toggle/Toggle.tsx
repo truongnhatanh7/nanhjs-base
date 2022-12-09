@@ -1,20 +1,19 @@
 import React from "react";
 import { styled } from "../../design/stitches.config";
-
 import { mergeRefs } from "react-merge-refs";
 
-type PrimitiveRadio = React.ComponentProps<typeof Input>;
+type PrimitiveToggle = React.ComponentProps<typeof Input>;
 
-export const Radio: React.FC<PrimitiveRadio> = React.forwardRef<
+export const Toggle: React.FC<PrimitiveToggle> = React.forwardRef<
 	HTMLInputElement,
-	PrimitiveRadio
+	PrimitiveToggle
 >((props, ref) => {
 	const innerRef = React.useRef<HTMLInputElement>(null);
 	const [checked, setChecked] = React.useState(false);
-
 	return (
 		<Label
 			onClick={() => {
+				console.log("label clicked");
 				setChecked(!checked);
 			}}
 			onKeyDown={(e) => {
@@ -26,50 +25,55 @@ export const Radio: React.FC<PrimitiveRadio> = React.forwardRef<
 				}
 			}}
 			tabIndex={1}
+			css={{
+				background: `${checked ? "#81C784" : "#dddddd"}`,
+			}}
 		>
 			<Input
 				{...props}
 				ref={mergeRefs([innerRef, ref])}
-				type="radio"
+				type="checkbox"
 				tabIndex={-1}
 			/>
-			<Check />
+
+			<Spinner
+				onClick={(e) => {
+					e.stopPropagation();
+					console.log("spinner clicked");
+				}}
+			></Spinner>
 		</Label>
 	);
 });
 
 const Label = styled("label", {
-	width: 16,
-	height: 16,
 	position: "relative",
-	background: "$black",
-	border: "1px solid $white",
+	width: 80,
+	height: 40,
+	background: "#dddddd",
 	borderRadius: "9999px",
-	"&:focus-visible": {
-		outline: "2px solid $white",
-	},
+	padding: 4,
+	display: "block",
 });
 
-const Check = styled("div", {
+const Spinner = styled("div", {
 	position: "absolute",
+	left: 8,
 	top: "50%",
-	left: "50%",
-	transform: "translate(-50%, -50%)",
-	background: "#ffffff",
+	width: 32,
+	height: 32,
 	borderRadius: "9999px",
-	zIndex: 2,
-	display: "none",
-	width: 12,
-	height: 12,
+	background: "#ffffff",
+	transform: "translate(0, -50%)",
+	transition: "all .4s cubic-bezier(.7, 0, .7, 1)",
 });
 
 const Input = styled("input", {
 	opacity: 0,
 	position: "absolute",
 	inset: 0,
-	zIndex: 3,
 
-	[`&:checked + ${Check}`]: {
-		display: "block",
+	[`&:checked ~ ${Spinner}`]: {
+		transform: "translate(100%, -50%)",
 	},
 });

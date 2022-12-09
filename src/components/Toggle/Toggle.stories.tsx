@@ -1,19 +1,19 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { styled } from "../../design/stitches.config";
-import { Radio } from "./Radio";
+import { Toggle } from "./Toggle";
 import { useForm, Controller } from "react-hook-form";
 import { Button } from "../Button/Button";
 
 type FormValues = {
-	role: string;
+	isOn: boolean;
 };
 
-const story = storiesOf("Component/Radio", module);
+const story = storiesOf("Component/Toggle", module);
 
 story.add("Default", () => (
 	<Form>
-		<Radio />
+		<Toggle />
 	</Form>
 ));
 
@@ -31,22 +31,8 @@ story.add("React hook form", () => {
 
 	return (
 		<Form onSubmit={onSubmit}>
-			Frontend
-			<Radio
-				group="fe"
-				id="fe"
-				value="fe"
-				name="role"
-				{...register("role")}
-			/>
-			Backend
-			<Radio
-				group="be"
-				id="be"
-				value="be"
-				name="role"
-				{...register("role")}
-			/>
+			isOn
+			<Toggle {...register("isOn")} />
 			<Button
 				type="submit"
 				css={{
