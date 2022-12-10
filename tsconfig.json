@@ -8,7 +8,11 @@
     "target": "es6",
     "module": "es6",
     "moduleResolution": "node",
-    "plugins": [{ "name": "typescript-plugin-css-modules"}]
+    "plugins": [{ "name": "typescript-plugin-css-modules"}],
+    "baseUrl": ".",
+    "paths": {
+      "@design/*": ["src/design/*"],
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.stories.tsx"]

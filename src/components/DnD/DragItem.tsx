@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, MouseEvent } from 'react';
-import { styled } from "../../design/stitches.config"
+import { styled } from "@design/stitches.config"
 
 type PrimitiveProps = React.ComponentProps<typeof Wrapper>
 
